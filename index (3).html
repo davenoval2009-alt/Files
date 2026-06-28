@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piso WiFi</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#0d47a1;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:12px;
+    width:320px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+}
+
+button{
+    width:100%;
+    padding:12px;
+    font-size:18px;
+    margin-top:15px;
+    background:#1976d2;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1565c0;
+}
+
+#status{
+    margin-top:20px;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Piso WiFi</h2>
+    <h3>Insert Coin</h3>
+
+    <p>Balance: ₱<span id="balance">0</span></p>
+
+    <button onclick="insertCoin()">Insert ₱1 Coin</button>
+
+    <div id="status">Waiting for coin...</div>
+</div>
+
+<script>
+let balance = 0;
+
+function insertCoin(){
+    balance++;
+    document.getElementById("balance").textContent = balance;
+
+    document.getElementById("status").innerHTML =
+    "✅ Coin Accepted!<br>Remaining Time: " + (balance * 30) + " Minutes";
+}
+</script>
+
+</body>
+</html>
